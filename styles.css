@@ -1,0 +1,830 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('./assets/font/TTNormsPro-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'myFont', sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 28px 32px 28px 32px;
+    height: auto;
+}
+
+.header__left {
+    display: flex;
+}
+
+.logo {
+    transition: all .5s;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.logo__img {
+    width: 80px;
+}
+
+.navigation {
+    align-content: center;
+}
+
+.navigation__items {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 40px;
+}
+
+.navigation__item {
+    width: 140px; /* Фіксована ширина контейнера */
+    box-sizing: border-box;
+}
+
+.navigation__item-link {
+    position: relative;
+    text-decoration: none;
+    color: #1F2939;
+
+    font-size: 16px;
+}
+
+.navigation__item-link:hover {
+    font-weight: 800;
+}
+
+.navigation__item-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #5243C2;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.navigation__item-link:hover::after,
+.navigation__item-link:focus::after,
+.navigation__item-link:active::after {
+    visibility: visible;
+    width: 100%;
+}
+
+.contact {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.callBack {
+    padding: 8px 24px;
+    background-color: #FFEDED;
+    color: #FF4D4F;
+    font-size: 16px;
+    border: 1px solid #ffeded00;
+    border-radius: 20px;
+
+    transition: all .5s;
+}
+
+.callBack:hover {
+    color: #FFEDED;
+    background-color: #FF4D4F;
+    border-color: #FFEDED;
+    cursor: pointer;
+}
+
+.phone {
+    color: #1F2939;
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: all .5s;
+}
+
+.phone:hover {
+    font-weight: 800;
+}
+
+.hero {
+    margin-inline: 188px ;
+}
+
+.hero-content{
+    display: flex;
+    gap: 150px;
+}
+
+.text {
+    margin-top: 200px;
+}
+
+.text__title {
+    color: #1F2939;
+    margin: 0;
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.text__description{
+    text-align: justify;
+    color: #676D77;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.burger {
+    width: 720px;
+    height: 720px;
+    position: relative;
+    background-image: url(./assets/hero_burger/background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain
+}
+
+.burger_emoji1 {
+    position: absolute;
+    width: 32px;
+    left: 100px;
+    top: 250px;
+}
+
+.burger_emoji2 {
+    position: absolute;
+    width: 32px;
+    right: 50px;
+    top: 350px;
+}
+
+.burger_emoji3 {
+    position: absolute;
+    width: 72px;
+    right: 40px;
+    top: 120px;
+}
+
+.burger_emoji4 {
+    position: absolute;
+    width: 72px;
+    left: 100px;
+    bottom: 150px;
+}
+
+.burger_make_link {
+    position: absolute;
+
+    z-index: 6;
+
+    bottom: 250px;
+    left: 20px;
+
+    width: 90px;
+    height: 90px;
+    background-color: #5243C2;
+    border: 1px solid #00000000;
+    border-radius: 50%;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 900;
+
+    animation: pulse 2s linear infinite;
+
+    transition: all .5s;
+}
+
+.burger_make_link:hover {
+    cursor: pointer;
+    color: #5243C2;
+    border-color: #5243C2;
+    background-color: #FFFFFF;
+    filter: drop-shadow(0 0 8px #5243c2);
+    animation: none;
+}
+
+.burger_hero_wrapper {
+    position: relative;
+    width: 550px;
+    height: 550px;
+}
+
+.burger_hero-bottomBread{
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    left: 150px;
+    width: 350px;
+    height: 150px;
+
+    transition: transform 0.2s;
+}
+
+.burger_hero-butter {
+    position: absolute;
+    z-index: 2;
+    bottom: 35px;
+    left: 180px;
+    width: 250px;
+    height: 100px;
+
+    transition: transform 0.2s;
+}
+
+.burger_hero-bottomLetuce {
+    position: absolute;
+    z-index: 2;
+    bottom: 70px;
+    left: 150px;
+    width: 300px;
+    height: 70px;
+
+    transition: transform 0.2s;
+}
+
+.burger_hero-bottomChease {
+    position: absolute;
+    z-index: 2;
+    bottom: 50px;
+    left: 180px;
+    width: 250px;
+    height: 100px;
+
+    transition: transform 0.2s;
+}
+
+.burger_hero-onion {
+    position: absolute;
+    z-index: 2;
+    bottom: 80px;
+    left: 150px;
+    width: 300px;
+    height: 100px;
+
+    transition: transform 0.2s;
+}
+
+.burger_hero-meat {
+    position: absolute;
+    z-index: 3;
+    bottom: 80px;
+    left: 170px;
+    width: 250px;
+    height: 100px;
+
+    transition: transform 0.2s;
+}
+
+.burger_hero-tomatos {
+    position: absolute;
+    z-index: 2;
+    bottom: 90px;
+    left: 180px;
+    width: 250px;
+    height: 70px;
+
+    transition: transform 0.2s;
+}
+
+.burger_hero-cocumber {
+    position: absolute;
+    z-index: 3;
+    bottom: 90px;
+    left: 160px;
+    width: 300px;
+    height: 90px;
+
+    transition: transform 0.2s;
+}
+
+.burger_hero-butterTop {
+    position: absolute;
+    z-index: 4;
+    bottom: 100px;
+    left: 200px;
+    width: 250px;
+    height: 100px;
+
+    transition: transform 0.2s;
+}
+
+.burger_hero-topBread {
+    position: absolute;
+    z-index: 5;
+    bottom: 50px;
+    left: 120px;
+    width: 430px;
+    height: 250px;
+
+    transition: transform 0.2s;
+}
+
+@media (max-width: 768px){
+    .logo__img {
+        width: 50px;
+    }
+
+    .navigation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navigation__items {
+        margin-left: 30px;
+    }
+
+    .navigation__item {
+        width: 100px;
+        box-sizing: border-box;
+    }
+    
+    .navigation__item-link {
+        font-size: 12px;
+    }
+
+    .contact {
+        gap: 30px;
+    }
+    
+    .callBack {
+        padding: 4px 12px;
+        font-size: 12px;
+    }
+
+    .phone {
+        font-size: 12px;
+    }
+
+    .hero {
+        margin-inline: 30px ;
+    }
+
+    .hero-content{
+        gap: 50px;
+    }
+    
+    .text {
+        margin-top: 150px;
+    }
+    
+    .text__title {
+        color: #1F2939;
+        margin: 0;
+        font-size: 24px;
+    }
+    
+    .text__description{
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+    .burger {
+        width: 400px;
+        height: 400px;
+    }
+
+    .burger_emoji1 {
+        position: absolute;
+        width: 30px;
+        left: 60px;
+        top: 80px;
+    }
+    
+    .burger_emoji2 {
+        position: absolute;
+        width: 30px;
+        right: 50px;
+        top: 130px;
+    }
+    
+    .burger_emoji3 {
+        position: absolute;
+        width: 50px;
+        right: 0px;
+        top: 200px;
+    }
+    
+    .burger_emoji4 {
+        position: absolute;
+        width: 50px;
+        left: 40px;
+        bottom: 70px;
+    }
+    
+    .burger_make_link {
+        position: absolute;
+    
+        z-index: 6;
+    
+        bottom: 150px;
+        left: 0px;
+    
+        width: 50px;
+        height: 50px;
+        background-color: #5243C2;
+        border: 1px solid #00000000;
+        border-radius: 50%;
+        color: #FFFFFF;
+        font-size: 10px;
+        font-weight: 900;
+    
+        animation: pulse 2s linear infinite;
+    
+        transition: all .5s;
+    }
+    
+    .burger_make_link:hover {
+        cursor: pointer;
+        color: #5243C2;
+        border-color: #5243C2;
+        background-color: #FFFFFF;
+        filter: drop-shadow(0 0 8px #5243c2);
+        animation: none;
+    }
+    
+    .burger_hero_wrapper {
+        position: relative;
+        width: 400px;
+        height: 400px;
+    }
+    
+    .burger_hero-bottomBread{
+        position: absolute;
+        z-index: 1;
+        bottom: 50px;
+        left: 100px;
+        width: 250px;
+        height: 100px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-butter {
+        position: absolute;
+        z-index: 2;
+        bottom: 80px;
+        left: 120px;
+        width: 200px;
+        height: 50px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-bottomLetuce {
+        position: absolute;
+        z-index: 2;
+        bottom: 100px;
+        left: 110px;
+        width: 200px;
+        height: 40px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-bottomChease {
+        position: absolute;
+        z-index: 2;
+        bottom: 70px;
+        left: 130px;
+        width: 170px;
+        height: 70px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-onion {
+        position: absolute;
+        z-index: 2;
+        bottom: 90px;
+        left: 110px;
+        width: 200px;
+        height: 70px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-meat {
+        position: absolute;
+        z-index: 3;
+        bottom: 90px;
+        left: 130px;
+        width: 170px;
+        height: 70px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-tomatos {
+        position: absolute;
+        z-index: 2;
+        bottom: 100px;
+        left: 120px;
+        width: 150px;
+        height: 40px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-cocumber {
+        position: absolute;
+        z-index: 3;
+        bottom: 110px;
+        left: 120px;
+        width: 150px;
+        height: 50px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-butterTop {
+        position: absolute;
+        z-index: 4;
+        bottom: 110px;
+        left: 120px;
+        width: 200px;
+        height: 50px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-topBread {
+        position: absolute;
+        z-index: 5;
+        bottom: 65px;
+        left: 90px;
+        width: 300px;
+        height: 200px;
+    
+        transition: transform 0.2s;
+    }
+}
+
+@media (max-width: 320px){
+    .navbar {
+        margin: 10px 14px;
+    }
+
+    .header__left {
+        align-items: center;
+    }
+
+    .logo__img {
+        width: 25px;
+    }
+
+    .navigation__items {
+        margin-left: 10px;
+    }
+
+    .navigation__item {
+        display: flex;
+        width: 60px;
+        box-sizing: border-box;
+    }
+    
+    .navigation__item-link {
+        font-size: 6px;
+    }
+
+    .contact {
+        gap: 10px;
+    }
+    
+    .callBack {
+        padding: 3px 5px;
+        font-size: 6px;
+    }
+
+    .phone {
+        font-size: 6px;
+    }
+
+    .hero {
+        margin-inline: 20px ;
+    }
+
+    .hero-content{
+        gap: 30px;
+    }
+    
+    .text {
+        margin-top: 30px;
+    }
+    
+    .text__title {
+        color: #1F2939;
+        margin: 0;
+        font-size: 14px;
+    }
+    
+    .text__description{
+        font-size: 8px;
+        line-height: 10px;
+    }
+    
+    .burger {
+        width: 150px;
+        height: 150px;
+    }
+
+    .burger_emoji1 {
+        position: absolute;
+        width: 20px;
+        left: 0px;
+        top: 120px;
+    }
+    
+    .burger_emoji2 {
+        position: absolute;
+        width: 20px;
+        right: 10px;
+        top: 110px;
+    }
+    
+    .burger_emoji3 {
+        position: absolute;
+        width: 30px;
+        right: 0px;
+        top: 50px;
+    }
+    
+    .burger_emoji4 {
+        position: absolute;
+        width: 30px;
+        left: 10px;
+        top: 20px;
+    }
+    
+    .burger_make_link {
+        position: absolute;
+    
+        z-index: 6;
+    
+        bottom: 50px;
+        left: 0px;
+    
+        width: 30px;
+        height: 30px;
+        background-color: #5243C2;
+        border: 1px solid #00000000;
+        border-radius: 50%;
+        color: #FFFFFF;
+        font-size: 5px;
+        font-weight: 900;
+    
+        animation: pulse 2s linear infinite;
+    
+        transition: all .5s;
+    }
+    
+    .burger_make_link:hover {
+        cursor: pointer;
+        color: #5243C2;
+        border-color: #5243C2;
+        background-color: #FFFFFF;
+        filter: drop-shadow(0 0 8px #5243c2);
+        animation: none;
+    }
+    
+    .burger_hero_wrapper {
+        position: relative;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .burger_hero-bottomBread{
+        position: absolute;
+        z-index: 1;
+        bottom: 20px;
+        left: 30px;
+        width: 100px;
+        height: 30px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-butter {
+        position: absolute;
+        z-index: 2;
+        bottom: 30px;
+        left: 40px;
+        width: 70px;
+        height: 20px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-bottomLetuce {
+        position: absolute;
+        z-index: 2;
+        bottom: 35px;
+        left: 40px;
+        width: 70px;
+        height: 10px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-bottomChease {
+        position: absolute;
+        z-index: 2;
+        bottom: 30px;
+        left: 40px;
+        width: 70px;
+        height: 20px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-onion {
+        position: absolute;
+        z-index: 2;
+        bottom: 35px;
+        left: 40px;
+        width: 70px;
+        height: 20px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-meat {
+        position: absolute;
+        z-index: 3;
+        bottom: 33px;
+        left: 40px;
+        width: 70px;
+        height: 30px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-tomatos {
+        position: absolute;
+        z-index: 2;
+        bottom: 40px;
+        left: 40px;
+        width: 70px;
+        height: 15px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-cocumber {
+        position: absolute;
+        z-index: 3;
+        bottom: 40px;
+        left: 40px;
+        width: 70px;
+        height: 20px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-butterTop {
+        position: absolute;
+        z-index: 4;
+        bottom: 40px;
+        left: 40px;
+        width: 70px;
+        height: 20px;
+    
+        transition: transform 0.2s;
+    }
+    
+    .burger_hero-topBread {
+        position: absolute;
+        z-index: 5;
+        bottom: 28px;
+        left: 25px;
+        width: 120px;
+        height: 70px;
+    
+        transition: transform 0.2s;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        filter: drop-shadow(0 0 0px #5243c2);
+    }
+    50% {
+        filter: drop-shadow(0 0 8px #5243c2);
+    }
+    100% {
+        filter: drop-shadow(0 0 0px #5243c2);
+    }
+}
