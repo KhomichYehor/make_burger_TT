@@ -36,16 +36,76 @@
         <div class="modal" id="callBackModal">
           <div class="modal-content">
             <span class="close">&times;</span>
-            <p class="modal__text">
-              Ми зателефонуємо вам через декілька хвилин! <br />
-              А поки Ви можете зібрати найсмачніший у Вашому житті бургер!
-              <a href="#maker" class="scroll-link">Натисни сюди!</a>
-            </p>
+              <div class="popup-text">
+                The order has been accepted and is already being prepared. Thank
+                you.
+              </div>
+              <form action="" class="email-form" id="phone-form">
+                <input
+                  class="popup-input"
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="+38 (0____) __________"
+                  required
+                />
+                <button class="popup-button" type="submit">Ok</button>
+              </form>
           </div>
         </div>
         <a href="tel:88004378722" class="phone">8 800 437-87-22</a>
+
       </div>
+      <button class="burger-menu">
+      </button>
     </header>
+
+    <div class="burger-menu-overlay">
+      <div class="burger-menu-content">
+        <div class="mobile-top-header">
+        <div class="logo">
+          <a href="#">
+            <img src="./assets/logo.svg" alt="Logo" class="logo__img" />
+          </a>
+        </div>
+        <button class="close-burger-menu"></button>
+      </div>
+        <div class="contact-mobile">
+          <button class="callBack">Call Me Back</button>
+          <div class="modal" id="callBackModal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+                <div class="popup-text">
+                  The order has been accepted and is already being prepared. Thank
+                  you.
+                </div>
+                <form action="" class="email-form" id="phone-form">
+                  <input
+                    class="popup-input"
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="+38 (0____) __________"
+                    required
+                  />
+                  <button class="popup-button" type="submit">Ok</button>
+                </form>
+            </div>
+          </div>
+          <a href="tel:88004378722" class="phone">8 800 437-87-22</a>
+        </div>
+        <nav class="navigation-mobile">
+          <ul class="navigation__items">
+            <li class="navigation__item">
+              <a href="./" data-section="discover" class="navigation__item-link">Diskover</a>
+            </li>
+            <li class="navigation__item">
+              <a href="./" data-section="maker" class="navigation__item-link">Make Your Burger</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
 
     <section id="discover" class="hero active">
       <div class="hero-content">
