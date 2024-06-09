@@ -932,7 +932,7 @@ body.lock-scroll {
   width: 100vw;
   height: 100vh;
   background-color: #fff;
-  padding: 20px;
+  padding: 5px;
   border-radius: 5px;
 }
 
@@ -1314,6 +1314,7 @@ body.lock-scroll {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 64px;
+    margin-inline: 30px;
   }
 
   .contact-mobile {
@@ -1321,6 +1322,7 @@ body.lock-scroll {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
+    margin-inline: 30px;
   }
 
   .callBack {
@@ -1573,7 +1575,7 @@ body.lock-scroll {
     position: absolute;
     top: 450%;
     width: 150px;
-    left: -10%;
+    left: -10;
     align-items: baseline;
     gap: 10px;
   }
