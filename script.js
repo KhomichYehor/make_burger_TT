@@ -509,12 +509,12 @@ const burgerMenuOverlay = document.querySelector('.burger-menu-overlay');
 
 burgerMenuButton.addEventListener('click', () => {
   burgerMenuOverlay.classList.add('active');
-  document.body.style.overflow = 'hidden'; // Заборона прокручування
+  document.body.style.overflow = 'hidden';
 });
 
 closeBurgerMenuButton.addEventListener('click', () => {
   burgerMenuOverlay.classList.remove('active');
-  document.body.style.overflow = ''; // Скасування заборони прокручування
+  document.body.style.overflow = '';
 });
 
 function hideNavigationAndContact() {
