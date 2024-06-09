@@ -164,6 +164,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
   });
 
+  callBackButton.addEventListener('click', () => {
+    // Закриваємо бургер-меню
+    burgerMenuOverlay.classList.remove('active');
+  
+    // Відкриваємо попап
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  });
+
   closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
@@ -237,7 +246,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    
   const incrementButtons = document.querySelectorAll('.choose-card-increment');
   const decrementButtons = document.querySelectorAll('.choose-card-decrement');
   const priceBlockSum = document.querySelector('.price-block-sum');
@@ -386,11 +394,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const ingredientId = card
       .querySelector('.choose-card-title')
       .textContent.trim();
-      const ingredients = Array.from(
-        burgerBlock.querySelectorAll(
-          `.burger-ingredient[data-id^="${ingredientId}"], .burger-ingredient-bun`
-        )
-      );
+    const ingredients = Array.from(
+      burgerBlock.querySelectorAll(
+        `.burger-ingredient[data-id^="${ingredientId}"], .burger-ingredient-bun`
+      )
+    );
     if (ingredients.length > 0) {
       burgerBlock.removeChild(ingredients[0]);
       updateIngredientPositions();
@@ -404,7 +412,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let position;
     if (window.innerWidth <= 768) {
       position = 290;
-    } else {
+    } else if (window.innerWidth <= 768) {
+      position = 230;
+    }else{
       position = burgerBlock.clientHeight - 90;
     }
 
@@ -468,27 +478,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-    const emailForm = document.getElementById('email-form');
-    const popupConfirm = document.getElementById('popup-confirm');
-    const popupConfirmClose = document.getElementById('popup-confirm-close');
-    const closeConfirmPopup = document.getElementById('close-confirm-popup');
-  
-    popupClose.addEventListener('click', () => {
-      popup.style.display = 'none';
-    });
-  
-    popupConfirmClose.addEventListener('click', () => {
-      popupConfirm.style.display = 'none';
-    });
-  
-    closeConfirmPopup.addEventListener('click', () => {
-      popupConfirm.style.display = 'none';
-    });
-  
-    emailForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-  
-      popup.style.display = 'none';
-      popupConfirm.style.display = 'flex';
-    });
+  const emailForm = document.getElementById('email-form');
+  const popupConfirm = document.getElementById('popup-confirm');
+  const popupConfirmClose = document.getElementById('popup-confirm-close');
+  const closeConfirmPopup = document.getElementById('close-confirm-popup');
+
+  popupClose.addEventListener('click', () => {
+    popup.style.display = 'none';
   });
+
+  popupConfirmClose.addEventListener('click', () => {
+    popupConfirm.style.display = 'none';
+  });
+
+  closeConfirmPopup.addEventListener('click', () => {
+    popupConfirm.style.display = 'none';
+  });
+
+  emailForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    popup.style.display = 'none';
+    popupConfirm.style.display = 'flex';
+  });
+});
+
+const burgerMenuButton = document.querySelector('.burger-menu');
+const closeBurgerMenuButton = document.querySelector('.close-burger-menu');
+const burgerMenuOverlay = document.querySelector('.burger-menu-overlay');
+
+burgerMenuButton.addEventListener('click', () => {
+  burgerMenuOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Заборона прокручування
+});
+
+closeBurgerMenuButton.addEventListener('click', () => {
+  burgerMenuOverlay.classList.remove('active');
+  document.body.style.overflow = ''; // Скасування заборони прокручування
+});
+
+function hideNavigationAndContact() {
+  const navigation = document.querySelector('.navigation');
+  const contact = document.querySelector('.contact');
+
+  if (window.innerWidth < 768) {
+    if (navigation) {
+      navigation.style.display = 'none';
+    }
+
+    if (contact) {
+      contact.style.display = 'none';
+    }
+  }
+}
+
+
+
