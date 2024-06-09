@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
+
   <body>
     <header class="navbar">
       <div class="header__left">
@@ -18,12 +19,12 @@
         <nav class="navigation">
           <ul class="navigation__items">
             <li class="navigation__item">
-              <a href="#" data-section="discover" class="navigation__item-link"
+              <a href="./" data-section="discover" class="navigation__item-link"
                 >Diskover</a
               >
             </li>
             <li class="navigation__item">
-              <a href="#" data-section="maker" class="navigation__item-link"
+              <a href="./" data-section="maker" class="navigation__item-link"
                 >Make Your Burger</a
               >
             </li>
@@ -32,14 +33,27 @@
       </div>
       <div class="contact">
         <button class="callBack">Call Me Back</button>
+        <div class="modal" id="callBackModal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="modal__text">
+              Ми зателефонуємо вам через декілька хвилин! <br />
+              А поки Ви можете зібрати найсмачніший у Вашому житті бургер!
+              <a href="#maker" class="scroll-link">Натисни сюди!</a>
+            </p>
+          </div>
+        </div>
         <a href="tel:88004378722" class="phone">8 800 437-87-22</a>
       </div>
     </header>
 
-    <section id="discover" class="hero">
+    <section id="discover" class="hero active">
       <div class="hero-content">
         <div class="text">
-          <h1 class="text__title">Make <br> Your Burger</h1>
+          <h1 class="text__title">
+            Make <br />
+            Your Burger
+          </h1>
           <p class="text__description">
             Parallax screen. Burger ingredients and emojis moving depending on
             the position of the mouse pointer.
@@ -129,6 +143,526 @@
               id="10"
             />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="maker" class="burger__constructor">
+      <div class="container">
+        <div class="left-section">
+          <h1>
+            Make <br />
+            Your Burger
+          </h1>
+        </div>
+        <div class="center-section">
+          <div class="price-block">
+            <div class="price-block-text">
+              <div class="price-block-sum">$0.00</div>
+              <div class="price-block-gift-porpuse">
+                Build a <span class="price-block-red">$5</span> Burger and Get a
+                Gift
+              </div>
+              <div class="price-block-gift-promotion">
+                <div class="promotion-gift-text">+ GIFT</div>
+                <div class="promotion-gift-suptext">
+                  Tomato Ketchup
+                  <span class="promotion-gift-weight">0.2 oz</span>
+                </div>
+                <div class="promotion-gift-image">
+                  <img src="./assets/maker/ketchup.png" alt="ketchup" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="burger-block">
+            <img
+              class="bottomBun-img"
+              src="./assets/maker/burgerParts/bottomBun.png"
+              alt=""
+            />
+          </div>
+          <div class="sure">
+          </div>
+          <div class="order-block">
+            <button class="order-button">Order</button>
+          </div>
+        </div>
+        <div class="right-section">
+          <h1 class="summary-title">Summary</h1>
+          <div class="summary">
+            <div class="summary-item">
+              <img
+                class="summary-img"
+                src="./assets/maker/summary/calories.svg"
+                alt=""
+              />
+              <span class="summary-text" id="total-calories">50 kcal</span>
+            </div>
+            <div class="summary-item">
+              <img
+                class="summary-img"
+                src="./assets/maker/summary/time.svg"
+                alt=""
+              />
+              <span class="summary-text" id="total-time">0 min</span>
+            </div>
+            <div class="summary-item">
+              <img
+                class="summary-img"
+                src="./assets/maker/summary/weight.svg"
+                alt=""
+              />
+              <span class="summary-text" id="total-weight">20 g</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-section">
+        <div
+          class="choose-card"
+          data-price="2"
+          data-calories="12"
+          data-time="6"
+          data-weight="7"
+        >
+          <div class="choose-card-img">
+            <img
+              class="choose-card-img-item"
+              src="./assets/maker/burgerParts/cutlet.png"
+              alt=""
+            />
+          </div>
+          <div class="choose-card-title">Cutlet</div>
+          <div>
+            <div class="choose-card-summary">
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/calories.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">12 kcal</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/time.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">6 sec</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/weight.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">7 g</span>
+              </div>
+            </div>
+            <div class="choose-card-buttons">
+              <button class="choose-card-increment">
+                <img src="./assets/maker/increment.svg" alt="" />
+              </button>
+              <span class="choose-card-value">0</span>
+              <button class="choose-card-decrement">
+                <img src="./assets/maker/decrement.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="choose-card"
+          data-price="0.2"
+          data-calories="12"
+          data-time="6"
+          data-weight="7"
+        >
+          <div class="choose-card-img">
+            <img
+              class="choose-card-img-item"
+              src="./assets/maker/burgerParts/mayo.png"
+              alt=""
+            />
+          </div>
+          <div class="choose-card-title">Mayo</div>
+          <div>
+            <div class="choose-card-summary">
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/calories.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">12 kcal</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/time.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">6 sec</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/weight.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">7 g</span>
+              </div>
+            </div>
+            <div class="choose-card-buttons">
+              <button class="choose-card-increment">
+                <img src="./assets/maker/increment.svg" alt="" />
+              </button>
+              <span class="choose-card-value">0</span>
+              <button class="choose-card-decrement">
+                <img src="./assets/maker/decrement.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="choose-card"
+          data-price="0.2"
+          data-calories="12"
+          data-time="6"
+          data-weight="7"
+        >
+          <div class="choose-card-img">
+            <img
+              class="choose-card-img-item"
+              src="./assets/maker/burgerParts/onion.png"
+              alt=""
+            />
+          </div>
+          <div class="choose-card-title">Onion</div>
+          <div>
+            <div class="choose-card-summary">
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/calories.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">12 kcal</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/time.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">6 sec</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/weight.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">7 g</span>
+              </div>
+            </div>
+            <div class="choose-card-buttons">
+              <button class="choose-card-increment">
+                <img src="./assets/maker/increment.svg" alt="" />
+              </button>
+              <span class="choose-card-value">0</span>
+              <button class="choose-card-decrement">
+                <img src="./assets/maker/decrement.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="choose-card"
+          data-price="0.2"
+          data-calories="8"
+          data-time="5"
+          data-weight="4"
+        >
+          <div class="choose-card-img">
+            <img
+              class="choose-card-img-item"
+              src="./assets/maker/burgerParts/cocumber.png"
+              alt=""
+            />
+          </div>
+          <div class="choose-card-title">Cocumber</div>
+          <div>
+            <div class="choose-card-summary">
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/calories.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">8 kcal</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/time.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">5 sec</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/weight.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">4 g</span>
+              </div>
+            </div>
+            <div class="choose-card-buttons">
+              <button class="choose-card-increment">
+                <img src="./assets/maker/increment.svg" alt="" />
+              </button>
+              <span class="choose-card-value">0</span>
+              <button class="choose-card-decrement">
+                <img src="./assets/maker/decrement.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="choose-card"
+          data-price="0.2"
+          data-calories="12"
+          data-time="6"
+          data-weight="7"
+        >
+          <div class="choose-card-img">
+            <img
+              class="choose-card-img-item"
+              src="./assets/maker/burgerParts/tomato.png"
+              alt=""
+            />
+          </div>
+          <div class="choose-card-title">Tomato</div>
+          <div>
+            <div class="choose-card-summary">
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/calories.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">12 kcal</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/time.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">6 sec</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/weight.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">7 g</span>
+              </div>
+            </div>
+            <div class="choose-card-buttons">
+              <button class="choose-card-increment">
+                <img src="./assets/maker/increment.svg" alt="" />
+              </button>
+              <span class="choose-card-value">0</span>
+              <button class="choose-card-decrement">
+                <img src="./assets/maker/decrement.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="choose-card"
+          data-price="1"
+          data-calories="8"
+          data-time="5"
+          data-weight="4"
+        >
+          <div class="choose-card-img">
+            <img
+              class="choose-card-img-item"
+              src="./assets/maker/burgerParts/cheese.png"
+              alt=""
+            />
+          </div>
+          <div class="choose-card-title">Cheese</div>
+          <div>
+            <div class="choose-card-summary">
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/calories.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">8 kcal</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/time.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">5 sec</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/weight.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">4 g</span>
+              </div>
+            </div>
+            <div class="choose-card-buttons">
+              <button class="choose-card-increment">
+                <img src="./assets/maker/increment.svg" alt="" />
+              </button>
+              <span class="choose-card-value">0</span>
+              <button class="choose-card-decrement">
+                <img src="./assets/maker/decrement.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="choose-card"
+          data-price="1"
+          data-calories="8"
+          data-time="5"
+          data-weight="4"
+        >
+          <div class="choose-card-img">
+            <img
+              class="choose-card-img-item"
+              src="./assets/maker/burgerParts/salad.png"
+              alt=""
+            />
+          </div>
+          <div class="choose-card-title">Salad</div>
+          <div>
+            <div class="choose-card-summary">
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/calories.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">12 kcal</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/time.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">6 sec</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/weight.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">7 g</span>
+              </div>
+            </div>
+            <div class="choose-card-buttons">
+              <button class="choose-card-increment">
+                <img src="./assets/maker/increment.svg" alt="" />
+              </button>
+              <span class="choose-card-value">0</span>
+              <button class="choose-card-decrement">
+                <img src="./assets/maker/decrement.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="choose-card"
+          data-price="1"
+          data-calories="8"
+          data-time="5"
+          data-weight="4"
+        >
+          <div class="choose-card-img">
+            <img
+              class="choose-card-img-item"
+              src="./assets/maker/burgerParts/bun.png"
+              alt=""
+            />
+          </div>
+          <div class="choose-card-title">Bun</div>
+          <div>
+            <div class="choose-card-summary">
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/calories.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">12 kcal</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/time.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">6 sec</span>
+              </div>
+              <div class="choose-card-summary-item">
+                <img
+                  class="choose-card-summary-img"
+                  src="./assets/maker/summary/weight.svg"
+                  alt=""
+                />
+                <span class="choose-card-summary-text">7 g</span>
+              </div>
+            </div>
+            <div class="choose-card-buttons">
+              <button class="choose-card-increment">
+                <img src="./assets/maker/increment.svg" alt="" />
+             ` </button>
+              <span class="choose-card-value">0</span>
+              <button class="choose-card-decrement">
+                <img src="./assets/maker/decrement.svg" alt="" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup" id="popup">
+        <div class="popup-content">
+          <button class="popup-close" id="popup-close">&times;</button>
+          <div class="popup-burger" id="popup-burger"></div>
+          <div class="popup-text">The order has been accepted
+            and is already being prepared.
+            Thank you.</div>
+          <form action="" class="email-form" id="email-form">
+            <input class="popup-input" type="email" name="email" id="email" placeholder="Enter email" required>
+            <button class="popup-button" type="submit">Ok</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="popup" id="popup-confirm" style="display: none;">
+        <div class="popup-content">
+          <button class="popup-close" id="popup-confirm-close">&times;</button>
+          <div class="popup-text-close">Your email has been received. Thank you!</div>
+          <button class="popup-button-close" id="close-confirm-popup">Close</button>
         </div>
       </div>
     </section>

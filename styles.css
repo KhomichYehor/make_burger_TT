@@ -5,16 +5,26 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: 'myFont', sans-serif;
     box-sizing: border-box;
+    position: relative;
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
+    height: auto;
+    background-color: #fff;
+    z-index: 8;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 28px 32px 28px 32px;
+    padding: 28px 32px 0 32px;
     height: auto;
 }
 
@@ -48,7 +58,7 @@ body {
 }
 
 .navigation__item {
-    width: 140px; /* Фіксована ширина контейнера */
+    width: 140px;
     box-sizing: border-box;
 }
 
@@ -121,7 +131,7 @@ body {
 }
 
 .hero {
-    margin-inline: 188px ;
+    margin-inline: 80px ;
 }
 
 .hero-content{
@@ -332,6 +342,531 @@ body {
     transition: transform 0.2s;
 }
 
+.scroll-link {
+    text-decoration: none;
+    color: #FF4D4F;
+
+    transition: color .5s;
+}
+
+.scroll-link:hover {
+    color: #BE2B20;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    text-align: center;
+  }
+
+  .modal__text {
+    text-align: justify;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .burger__constructor {
+    margin-inline: 80px ;
+    margin-top: 100px;
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+}
+
+.left-section h1 {
+    text-align: start;
+    font-size: 60px;
+    font-weight: 500;
+    line-height: 70px;
+    text-wrap: nowrap;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.summary-title {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 43px;
+}
+
+.summary {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    gap: 10px;
+    background-color: #F5F5FF;
+    align-self: center;
+    padding: 12px 16px;
+    border-radius: 50px;
+}
+
+.summary-img {
+    width: 32px;
+}
+
+.summary-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    padding: 0;
+    margin: 0;
+    text-wrap: nowrap;
+}
+
+.center-section {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background-image: url(./assets/maker/makerBG.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.burger-block {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.burger-ingredient {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: slideIn 4s ease-out forwards;
+}
+
+.burger-ingredient-bun {
+    top: 0;
+    width: 350px;
+    height: 50px;
+    left: 55%;
+}
+
+.bottomBun-img{
+    position: absolute;
+    bottom: 0;
+    width: 350px;
+    height: auto;
+    left: 53%;
+    transform: translateX(-50%);
+
+    filter: drop-shadow(0 5px 20px grey);
+}
+
+@keyframes slideIn {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.price-block {
+    position: relative;
+}
+
+.price-block-text {
+    position: absolute;
+    right: -400px;
+    top: 250px;
+    display: flex;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.price-block-sum {
+    z-index: 2;
+    margin-top: -10px;
+    color: #fff;
+    font-size: 36px;
+    height: 30px;
+    font-weight: 800;
+    font-style: italic;
+    padding: 12px 24px;
+    background-color: #5243C2;
+    border-radius: 99px;
+}
+
+.price-block-red {
+    color: red;
+    font-weight: 800;
+}
+
+.price-block-gift-promotion {
+    display: none;
+    width: 341px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.promotion-gift-text {
+    align-self: flex-start;
+    font-size: 36px;
+    font-weight: 800;
+    color: #FF4D4F;
+    line-height: 43px;
+    margin-bottom: 8px;
+}
+
+.promotion-gift-suptext {
+    margin-left: 30px;
+    color: #1F2939;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+.promotion-gift-weight {
+    color: #949BA6;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+.promotion-gift-image {
+    margin-left: 60px;
+    width: 172px;
+    height: 134px;
+}
+
+.order-button {
+    position: absolute;
+    background-color: #BE2B20;
+    padding: 12px 24px;
+    color: #fff;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 43px;
+    font-style: italic;
+    border: 1px solid #be2a2000;
+    border-radius: 99px;
+    bottom: 15%;
+    left: 35%;
+
+    transition: all .5s;
+}
+
+.order-button:hover {
+    cursor: pointer;
+    background-color: #5243C2;
+}
+
+.order-button:disabled {
+    background-color: #F5F5FF;
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.choose-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #F0F7FA;
+    border-radius: 20px;
+    width: 140px;
+    height: auto;
+    padding: 20px 10px;
+}
+
+.choose-card-img-item {
+    width: 93px;
+    height: 32px;
+    margin-bottom: 10px;
+}
+
+.choose-card-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.choose-card-summary{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.choose-card-summary-item {
+    width: 100%;
+    background-color: #F5F5FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 99px;
+    gap: 5px;
+}
+
+.choose-card-summary-img {
+    width: 12px;
+}
+
+.choose-card-summary-text {
+    font-size: 8px;
+    text-wrap: nowrap;
+}
+
+.choose-card-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.choose-card-increment,
+.choose-card-decrement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5FF;
+    border: none;
+    border-radius: 99px;
+    width: 32px;
+
+    transition: all .5s;
+}
+
+.choose-card-increment:hover,
+.choose-card-decrement:hover {
+    background-color: #FFEDED;
+    cursor: pointer;
+}
+
+.sure {
+    display: none;
+    position: absolute;
+    height: 80px;
+    width: 300px;
+    right: -20%;
+    top: 0;
+    background-image: url(./assets/maker/sureBG.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+}
+
+/* Стилі для попапу */
+.popup {
+    display: none; /* Приховуємо попап за замовчуванням */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Тло попапу */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    width: 500px;
+    height: 400px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popup-burger {
+    background-image: url(./assets/maker/popupBG.png);
+    background-repeat: no-repeat;
+    background-position:150px;
+    background-size:50%;
+    position: relative;
+    min-width: 600px;
+    min-height: 400px;
+    max-width: 650px;
+    max-height: 450px;
+}
+
+.email-form {
+    position: absolute;
+    bottom: 20%;
+left: 50%;
+transform: translate(-50%);
+display: flex;
+align-items: center ;
+gap: 10px   ;
+}
+
+.popup-input {
+    width: 180px;
+    height: 30px;
+    background-color: #FFEDED;
+    padding: 8px 16px;
+    color: #FF4D4F;
+    font-size: 16px;
+    border: 1px solid #ff4d5000;
+    border-radius: 99px;
+
+    transition: all .5s;
+}
+
+.popup-text {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 44px;
+    color: #1F2939;
+    z-index: 2;
+    position: absolute;
+    top:40%
+}
+
+.popup-text-close {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 44px;
+    color: #1F2939;
+    z-index: 2;
+    position: absolute;
+    top:40%;
+    left:7%
+}
+
+.popup-button {
+    padding: 4px;
+    width: auto;
+    height: auto;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    font-style: italic;
+    background-color: #BE2B20;
+    text-align: center;
+    border: 1px solid #be2a2000;
+    border-radius: 99px;
+
+    transition: all.5s;
+}
+
+.popup-button:hover {
+    cursor:pointer;
+    border: 1px solid #BE2B20;
+    background-color: #F0F7FA;
+    color: #BE2B20;
+}
+
+.popup-button-close {
+    position: absolute;
+    bottom: 30%;
+    left: 43%;
+    padding: 4px;
+    width: auto;
+    height: auto;
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    font-style: italic;
+    background-color: #BE2B20;
+    text-align: center;
+    border: 1px solid #be2a2000;
+    border-radius: 99px;
+
+    transition: all.5s;
+}
+
+.popup-button-close:hover {
+    cursor:pointer;
+    border: 1px solid #BE2B20;
+    background-color: #F0F7FA;
+    color: #BE2B20;
+}
+
+.popup-input:focus,
+.popup-input:active{
+    border: 1px solid #FF4D4F;
+}
+
+.popup-input:focus-visible {
+    outline: none;
+}
+
+.popup-input::placeholder{
+    color: #FF4D4F;
+    font-size: 16px;
+}
+
+.popup-burger img {
+    width: 50%; /* Зменшуємо розмір зображення */
+    display: block;
+    margin-left: 50%;
+}
+
+    /* Заблокування прокручування */
+    body.lock-scroll {
+        overflow: hidden;
+    }
+
+
 @media (max-width: 768px){
     .logo__img {
         width: 50px;
@@ -439,6 +974,7 @@ body {
         border: 1px solid #00000000;
         border-radius: 50%;
         color: #FFFFFF;
+        
         font-size: 10px;
         font-weight: 900;
     
