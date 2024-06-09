@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let ingredientCount = 0;
 
   function checkIngredientCount() {
-    let threshold = 20;
+    let threshold = 70;
 
     if (window.innerWidth < 768) {
       threshold = 10;
@@ -401,7 +401,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const ingredients = Array.from(
       burgerBlock.querySelectorAll('.burger-ingredient')
     );
-    let position = burgerBlock.clientHeight - 90;
+    let position;
+    if (window.innerWidth <= 768) {
+      position = 290;
+    } else {
+      position = burgerBlock.clientHeight - 90;
+    }
 
     ingredients.forEach((ingredient) => {
       ingredient.style.top = `${position}px`;
@@ -481,14 +486,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     emailForm.addEventListener('submit', (event) => {
-      event.preventDefault(); // Зупиняємо відправку форми
+      event.preventDefault();
   
-      console.log('Форма була відправлена'); // Додайте повідомлення в консоль
-  
-      // Закриваємо перший попап
       popup.style.display = 'none';
-  
-      // Відкриваємо другий попап
       popupConfirm.style.display = 'flex';
     });
   });
