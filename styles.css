@@ -619,6 +619,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-left: 10%;
 }
 
 .choose-card {
